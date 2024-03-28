@@ -8,8 +8,7 @@ This project provides a solution for managing tour availabilities, allowing tour
 - [Installation](#installation)
 - [Usage](#usage)
 - [Sample Data](#sample-data)
-- [Contributing](#contributing)
-- [License](#license)
+- [API Documentation](#api-documentation)
 
 ## Introduction
 
@@ -23,9 +22,12 @@ To install and run the Tour Availability Calendar application locally, follow th
 2. Navigate to the project directory.
 3. Install dependencies by running `bundle install`.
 4. Set up the database by running `rails db:create` and `rails db:migrate`.
-5. Start the Rails server by running `rails server`.
-6. Access the application in your web browser at `http://localhost:3000`.
-7. Testing by running `bundle exec rspec`.
+
+## Usage
+
+1. Start the Rails server by running `rails server`.
+2. Access the application in your web browser at `http://localhost:3000`.
+3. Testing by running `bundle exec rspec`.
 
 ## Sample Data
 
