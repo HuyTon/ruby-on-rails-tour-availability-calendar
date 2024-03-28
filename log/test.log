@@ -21288,3 +21288,425 @@ Processing by ApiController#create_tour_availability as HTML
   Parameters: {"tour"=>{"name"=>nil}, "availability"=>{"start_time"=>nil}, "availability_rule"=>{"rule_type"=>nil}}
 Completed 422 Unprocessable Entity in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 318)
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by ApiController#get_availability_tours as HTML
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT "tours".* FROM "tours"[0m
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 2420)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "availability_rules"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "availabilities"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tours"[0m
+Processing by ApiController#create_tour_availability as HTML
+  Parameters: {"availability"=>{"start_time"=>"2024-03-28 17:20:33 +0800"}, "availability_rule"=>{"rule_data"=>{"dates"=>["2024-01-05", "2024-02-06", "2024-03-15"]}, "rule_type"=>"specific_dates"}, "tour"=>{"description"=>"A sample tour description", "duration_days"=>"1", "duration_hours"=>"3", "name"=>"Sample Tour"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Create (1.0ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "specific_dates"], ["rule_data", "{\"dates\":[\"2024-01-05\",\"2024-02-06\",\"2024-03-15\"]}"], ["created_at", "2024-03-28 09:20:33.752656"], ["updated_at", "2024-03-28 09:20:33.752656"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Create (0.2ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "duration_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sample Tour"], ["description", "A sample tour description"], ["duration_hours", 3], ["duration_days", 1], ["created_at", "2024-03-28 09:20:33.786515"], ["updated_at", "2024-03-28 09:20:33.786515"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Load (0.2ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAvailability Create (0.8ms)[0m  [1m[32mINSERT INTO "availabilities" ("tour_id", "availability_rule_id", "start_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tour_id", 1], ["availability_rule_id", 1], ["start_time", "2024-03-28 09:20:33"], ["created_at", "2024-03-28 09:20:33.812112"], ["updated_at", "2024-03-28 09:20:33.812112"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 72ms (Views: 0.9ms | ActiveRecord: 3.6ms | Allocations: 16860)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tours"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "availabilities"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "availability_rules"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by ApiController#create_tour_availability as HTML
+  Parameters: {"availability"=>{"start_time"=>"2024-03-28 17:20:33 +0800"}, "availability_rule"=>{"rule_data"=>{"dates"=>["2024-01-05", "2024-02-06", "2024-03-15"]}, "rule_type"=>"specific_dates"}, "tour"=>{"description"=>"A sample tour description", "duration_days"=>"1", "duration_hours"=>"3", "name"=>"Sample Tour"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Create (1.0ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "specific_dates"], ["rule_data", "{\"dates\":[\"2024-01-05\",\"2024-02-06\",\"2024-03-15\"]}"], ["created_at", "2024-03-28 09:20:33.822427"], ["updated_at", "2024-03-28 09:20:33.822427"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Create (0.4ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "duration_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sample Tour"], ["description", "A sample tour description"], ["duration_hours", 3], ["duration_days", 1], ["created_at", "2024-03-28 09:20:33.826550"], ["updated_at", "2024-03-28 09:20:33.826550"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Load (0.1ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAvailability Create (0.3ms)[0m  [1m[32mINSERT INTO "availabilities" ("tour_id", "availability_rule_id", "start_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tour_id", 1], ["availability_rule_id", 1], ["start_time", "2024-03-28 09:20:33"], ["created_at", "2024-03-28 09:20:33.831108"], ["updated_at", "2024-03-28 09:20:33.831108"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 12ms (Views: 0.9ms | ActiveRecord: 2.3ms | Allocations: 2639)
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by ApiController#create_tour_availability as HTML
+  Parameters: {"availability"=>{"start_time"=>""}, "availability_rule"=>{"rule_type"=>""}, "tour"=>{"name"=>""}}
+Completed 422 Unprocessable Entity in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 303)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by AvailabilitiesController#index as HTML
+  [1m[36mAvailability Load (0.4ms)[0m  [1m[34mSELECT "availabilities".* FROM "availabilities"[0m
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 323)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Create (0.4ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "duration_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sample Tour"], ["description", "A sample tour description"], ["duration_hours", 3], ["duration_days", 1], ["created_at", "2024-03-28 09:20:33.852820"], ["updated_at", "2024-03-28 09:20:33.852820"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Create (0.1ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "specific_dates"], ["rule_data", "{\"dates\":[\"2024-01-05\",\"2024-02-06\",\"2024-03-15\"]}"], ["created_at", "2024-03-28 09:20:33.854467"], ["updated_at", "2024-03-28 09:20:33.854467"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mAvailability Load (0.2ms)[0m  [1m[34mSELECT "availabilities".* FROM "availabilities" WHERE "availabilities"."tour_id" = ? AND "availabilities"."availability_rule_id" = ? AND "availabilities"."start_time" = ? LIMIT ?[0m  [["tour_id", 1], ["availability_rule_id", 1], ["start_time", "2024-03-28 09:20:33.855381"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailability Create (0.3ms)[0m  [1m[32mINSERT INTO "availabilities" ("tour_id", "availability_rule_id", "start_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tour_id", 1], ["availability_rule_id", 1], ["start_time", "2024-03-28 09:20:33.855381"], ["created_at", "2024-03-28 09:20:33.856713"], ["updated_at", "2024-03-28 09:20:33.856713"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by AvailabilitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvailability Load (0.2ms)[0m  [1m[34mSELECT "availabilities".* FROM "availabilities" WHERE "availabilities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 553)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "availabilities"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Create (0.6ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "duration_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sample Tour"], ["description", "A sample tour description"], ["duration_hours", 3], ["duration_days", 1], ["created_at", "2024-03-28 09:20:33.867994"], ["updated_at", "2024-03-28 09:20:33.867994"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Create (0.2ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "specific_dates"], ["rule_data", "{\"dates\":[\"2024-01-05\",\"2024-02-06\",\"2024-03-15\"]}"], ["created_at", "2024-03-28 09:20:33.870536"], ["updated_at", "2024-03-28 09:20:33.870536"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by AvailabilitiesController#create as HTML
+  Parameters: {"availability"=>{"availability_rule_id"=>"1", "start_time"=>"2024-03-28 17:20:33 +0800", "tour_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT "tours".* FROM "tours" WHERE "tours"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAvailabilityRule Load (0.1ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAvailability Create (0.3ms)[0m  [1m[32mINSERT INTO "availabilities" ("tour_id", "availability_rule_id", "start_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tour_id", 1], ["availability_rule_id", 1], ["start_time", "2024-03-28 09:20:33"], ["created_at", "2024-03-28 09:20:33.879550"], ["updated_at", "2024-03-28 09:20:33.879550"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 7ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 1541)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "availabilities"[0m
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Create (0.5ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "duration_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sample Tour"], ["description", "A sample tour description"], ["duration_hours", 3], ["duration_days", 1], ["created_at", "2024-03-28 09:20:33.886056"], ["updated_at", "2024-03-28 09:20:33.886056"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Create (0.2ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "specific_dates"], ["rule_data", "{\"dates\":[\"2024-01-05\",\"2024-02-06\",\"2024-03-15\"]}"], ["created_at", "2024-03-28 09:20:33.889402"], ["updated_at", "2024-03-28 09:20:33.889402"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by AvailabilitiesController#create as HTML
+  Parameters: {"availability"=>{"availability_rule_id"=>"1", "start_time"=>"2024-03-28 17:20:33 +0800", "tour_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Load (0.1ms)[0m  [1m[34mSELECT "tours".* FROM "tours" WHERE "tours"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAvailabilityRule Load (0.1ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAvailability Create (0.8ms)[0m  [1m[32mINSERT INTO "availabilities" ("tour_id", "availability_rule_id", "start_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tour_id", 1], ["availability_rule_id", 1], ["start_time", "2024-03-28 09:20:33"], ["created_at", "2024-03-28 09:20:33.894848"], ["updated_at", "2024-03-28 09:20:33.894848"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 5ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 1249)
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by AvailabilitiesController#create as HTML
+  Parameters: {"availability"=>{"start_time"=>"2024-03-28 17:20:33 +0800", "tour_id"=>""}}
+Completed 422 Unprocessable Entity in 9ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 2014)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Create (0.5ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "duration_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sample Tour"], ["description", "A sample tour description"], ["duration_hours", 3], ["duration_days", 1], ["created_at", "2024-03-28 09:20:33.915832"], ["updated_at", "2024-03-28 09:20:33.915832"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Create (0.2ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "specific_dates"], ["rule_data", "{\"dates\":[\"2024-01-05\",\"2024-02-06\",\"2024-03-15\"]}"], ["created_at", "2024-03-28 09:20:33.918078"], ["updated_at", "2024-03-28 09:20:33.918078"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mAvailability Load (0.1ms)[0m  [1m[34mSELECT "availabilities".* FROM "availabilities" WHERE "availabilities"."tour_id" = ? AND "availabilities"."availability_rule_id" = ? AND "availabilities"."start_time" = ? LIMIT ?[0m  [["tour_id", 1], ["availability_rule_id", 1], ["start_time", "2024-03-28 09:20:33.919743"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailability Create (0.4ms)[0m  [1m[32mINSERT INTO "availabilities" ("tour_id", "availability_rule_id", "start_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tour_id", 1], ["availability_rule_id", 1], ["start_time", "2024-03-28 09:20:33.919743"], ["created_at", "2024-03-28 09:20:33.921579"], ["updated_at", "2024-03-28 09:20:33.921579"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by AvailabilitiesController#update as HTML
+  Parameters: {"availability"=>{"start_time"=>"2024-03-28 17:20:33 +0800"}, "id"=>"1"}
+  [1m[36mAvailability Load (0.1ms)[0m  [1m[34mSELECT "availabilities".* FROM "availabilities" WHERE "availabilities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Load (0.1ms)[0m  [1m[34mSELECT "tours".* FROM "tours" WHERE "tours"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAvailabilityRule Load (0.0ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAvailability Update (0.2ms)[0m  [1m[33mUPDATE "availabilities" SET "start_time" = ?, "updated_at" = ? WHERE "availabilities"."id" = ?[0m  [["start_time", "2024-03-28 09:20:33"], ["updated_at", "2024-03-28 09:20:33.928041"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 1486)
+  [1m[36mAvailability Load (0.1ms)[0m  [1m[34mSELECT "availabilities".* FROM "availabilities" WHERE "availabilities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Create (0.4ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "duration_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sample Tour"], ["description", "A sample tour description"], ["duration_hours", 3], ["duration_days", 1], ["created_at", "2024-03-28 09:20:33.936876"], ["updated_at", "2024-03-28 09:20:33.936876"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Create (0.2ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "specific_dates"], ["rule_data", "{\"dates\":[\"2024-01-05\",\"2024-02-06\",\"2024-03-15\"]}"], ["created_at", "2024-03-28 09:20:33.938637"], ["updated_at", "2024-03-28 09:20:33.938637"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mAvailability Load (0.1ms)[0m  [1m[34mSELECT "availabilities".* FROM "availabilities" WHERE "availabilities"."tour_id" = ? AND "availabilities"."availability_rule_id" = ? AND "availabilities"."start_time" = ? LIMIT ?[0m  [["tour_id", 1], ["availability_rule_id", 1], ["start_time", "2024-03-28 09:20:33.939736"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailability Create (0.2ms)[0m  [1m[32mINSERT INTO "availabilities" ("tour_id", "availability_rule_id", "start_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tour_id", 1], ["availability_rule_id", 1], ["start_time", "2024-03-28 09:20:33.939736"], ["created_at", "2024-03-28 09:20:33.941726"], ["updated_at", "2024-03-28 09:20:33.941726"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by AvailabilitiesController#update as HTML
+  Parameters: {"availability"=>{"start_time"=>"2024-03-28 17:20:33 +0800"}, "id"=>"1"}
+  [1m[36mAvailability Load (0.1ms)[0m  [1m[34mSELECT "availabilities".* FROM "availabilities" WHERE "availabilities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Load (0.1ms)[0m  [1m[34mSELECT "tours".* FROM "tours" WHERE "tours"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAvailabilityRule Load (0.1ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAvailability Update (0.2ms)[0m  [1m[33mUPDATE "availabilities" SET "start_time" = ?, "updated_at" = ? WHERE "availabilities"."id" = ?[0m  [["start_time", "2024-03-28 09:20:33"], ["updated_at", "2024-03-28 09:20:33.948769"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 1328)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Create (0.6ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "duration_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sample Tour"], ["description", "A sample tour description"], ["duration_hours", 3], ["duration_days", 1], ["created_at", "2024-03-28 09:20:33.954827"], ["updated_at", "2024-03-28 09:20:33.954827"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Create (0.3ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "specific_dates"], ["rule_data", "{\"dates\":[\"2024-01-05\",\"2024-02-06\",\"2024-03-15\"]}"], ["created_at", "2024-03-28 09:20:33.956920"], ["updated_at", "2024-03-28 09:20:33.956920"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mAvailability Load (0.1ms)[0m  [1m[34mSELECT "availabilities".* FROM "availabilities" WHERE "availabilities"."tour_id" = ? AND "availabilities"."availability_rule_id" = ? AND "availabilities"."start_time" = ? LIMIT ?[0m  [["tour_id", 1], ["availability_rule_id", 1], ["start_time", "2024-03-28 09:20:33.958435"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailability Create (0.3ms)[0m  [1m[32mINSERT INTO "availabilities" ("tour_id", "availability_rule_id", "start_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tour_id", 1], ["availability_rule_id", 1], ["start_time", "2024-03-28 09:20:33.958435"], ["created_at", "2024-03-28 09:20:33.960062"], ["updated_at", "2024-03-28 09:20:33.960062"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by AvailabilitiesController#update as HTML
+  Parameters: {"availability"=>{"start_time"=>"2024-03-28 17:20:33 +0800", "tour_id"=>""}, "id"=>"1"}
+  [1m[36mAvailability Load (0.1ms)[0m  [1m[34mSELECT "availabilities".* FROM "availabilities" WHERE "availabilities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Load (0.2ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 422 Unprocessable Entity in 5ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1108)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Create (0.7ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "duration_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sample Tour"], ["description", "A sample tour description"], ["duration_hours", 3], ["duration_days", 1], ["created_at", "2024-03-28 09:20:33.973380"], ["updated_at", "2024-03-28 09:20:33.973380"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Create (0.2ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "specific_dates"], ["rule_data", "{\"dates\":[\"2024-01-05\",\"2024-02-06\",\"2024-03-15\"]}"], ["created_at", "2024-03-28 09:20:33.975554"], ["updated_at", "2024-03-28 09:20:33.975554"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mAvailability Load (0.1ms)[0m  [1m[34mSELECT "availabilities".* FROM "availabilities" WHERE "availabilities"."tour_id" = ? AND "availabilities"."availability_rule_id" = ? AND "availabilities"."start_time" = ? LIMIT ?[0m  [["tour_id", 1], ["availability_rule_id", 1], ["start_time", "2024-03-28 09:20:33.976768"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailability Create (0.6ms)[0m  [1m[32mINSERT INTO "availabilities" ("tour_id", "availability_rule_id", "start_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tour_id", 1], ["availability_rule_id", 1], ["start_time", "2024-03-28 09:20:33.976768"], ["created_at", "2024-03-28 09:20:33.978008"], ["updated_at", "2024-03-28 09:20:33.978008"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "availabilities"[0m
+Processing by AvailabilitiesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvailability Load (0.2ms)[0m  [1m[34mSELECT "availabilities".* FROM "availabilities" WHERE "availabilities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailability Destroy (0.1ms)[0m  [1m[31mDELETE FROM "availabilities" WHERE "availabilities"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 3ms (ActiveRecord: 0.4ms | Allocations: 426)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "availabilities"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Create (0.6ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "duration_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sample Tour"], ["description", "A sample tour description"], ["duration_hours", 3], ["duration_days", 1], ["created_at", "2024-03-28 09:20:33.988249"], ["updated_at", "2024-03-28 09:20:33.988249"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Create (0.2ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "specific_dates"], ["rule_data", "{\"dates\":[\"2024-01-05\",\"2024-02-06\",\"2024-03-15\"]}"], ["created_at", "2024-03-28 09:20:33.990248"], ["updated_at", "2024-03-28 09:20:33.990248"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mAvailability Load (0.1ms)[0m  [1m[34mSELECT "availabilities".* FROM "availabilities" WHERE "availabilities"."tour_id" = ? AND "availabilities"."availability_rule_id" = ? AND "availabilities"."start_time" = ? LIMIT ?[0m  [["tour_id", 1], ["availability_rule_id", 1], ["start_time", "2024-03-28 09:20:33.991839"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailability Create (0.7ms)[0m  [1m[32mINSERT INTO "availabilities" ("tour_id", "availability_rule_id", "start_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tour_id", 1], ["availability_rule_id", 1], ["start_time", "2024-03-28 09:20:33.991839"], ["created_at", "2024-03-28 09:20:33.993169"], ["updated_at", "2024-03-28 09:20:33.993169"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by AvailabilitiesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvailability Load (0.1ms)[0m  [1m[34mSELECT "availabilities".* FROM "availabilities" WHERE "availabilities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailability Destroy (0.1ms)[0m  [1m[31mDELETE FROM "availabilities" WHERE "availabilities"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 6ms (ActiveRecord: 0.4ms | Allocations: 357)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by AvailabilityRulesController#index as HTML
+  [1m[36mAvailabilityRule Load (0.2ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules"[0m
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 314)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Create (0.7ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "specific_dates"], ["rule_data", "{\"dates\":[\"2024-01-05\",\"2024-02-06\",\"2024-03-15\"]}"], ["created_at", "2024-03-28 09:20:34.025425"], ["updated_at", "2024-03-28 09:20:34.025425"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by AvailabilityRulesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvailabilityRule Load (0.1ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 496)
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by AvailabilityRulesController#create as HTML
+  Parameters: {"availability_rule"=>{"rule_data"=>{"dates"=>["2024-01-05", "2024-02-06", "2024-03-15"]}, "rule_type"=>""}}
+[31mUnpermitted parameter: :dates[0m
+[31mUnpermitted parameter: :dates[0m
+Completed 422 Unprocessable Entity in 6ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 595)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Create (0.6ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "specific_dates"], ["rule_data", "{\"dates\":[\"2024-01-05\",\"2024-02-06\",\"2024-03-15\"]}"], ["created_at", "2024-03-28 09:20:34.068089"], ["updated_at", "2024-03-28 09:20:34.068089"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by AvailabilityRulesController#update as HTML
+  Parameters: {"availability_rule"=>{"rule_data"=>{"days"=>["Monday", "Wednesday", "Friday"]}, "rule_type"=>"weekly"}, "id"=>"1"}
+  [1m[36mAvailabilityRule Load (0.1ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Update (0.1ms)[0m  [1m[33mUPDATE "availability_rules" SET "rule_type" = ?, "rule_data" = ?, "updated_at" = ? WHERE "availability_rules"."id" = ?[0m  [["rule_type", "weekly"], ["rule_data", "{\"days\":[\"Monday\",\"Wednesday\",\"Friday\"]}"], ["updated_at", "2024-03-28 09:20:34.088267"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 14ms (Views: 2.4ms | ActiveRecord: 0.4ms | Allocations: 1656)
+  [1m[36mAvailabilityRule Load (0.1ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Create (0.7ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "specific_dates"], ["rule_data", "{\"dates\":[\"2024-01-05\",\"2024-02-06\",\"2024-03-15\"]}"], ["created_at", "2024-03-28 09:20:34.102927"], ["updated_at", "2024-03-28 09:20:34.102927"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by AvailabilityRulesController#update as HTML
+  Parameters: {"availability_rule"=>{"rule_data"=>{"days"=>["Monday", "Wednesday", "Friday"]}, "rule_type"=>"weekly"}, "id"=>"1"}
+  [1m[36mAvailabilityRule Load (0.2ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Update (0.1ms)[0m  [1m[33mUPDATE "availability_rules" SET "rule_type" = ?, "rule_data" = ?, "updated_at" = ? WHERE "availability_rules"."id" = ?[0m  [["rule_type", "weekly"], ["rule_data", "{\"days\":[\"Monday\",\"Wednesday\",\"Friday\"]}"], ["updated_at", "2024-03-28 09:20:34.121003"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1619)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Create (0.4ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "specific_dates"], ["rule_data", "{\"dates\":[\"2024-01-05\",\"2024-02-06\",\"2024-03-15\"]}"], ["created_at", "2024-03-28 09:20:34.126384"], ["updated_at", "2024-03-28 09:20:34.126384"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by AvailabilityRulesController#update as HTML
+  Parameters: {"availability_rule"=>{"rule_data"=>{"dates"=>["2024-01-05", "2024-02-06", "2024-03-15"]}, "rule_type"=>""}, "id"=>"1"}
+  [1m[36mAvailabilityRule Load (0.1ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :dates[0m
+[31mUnpermitted parameter: :dates[0m
+Completed 422 Unprocessable Entity in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 661)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Create (0.5ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "specific_dates"], ["rule_data", "{\"dates\":[\"2024-01-05\",\"2024-02-06\",\"2024-03-15\"]}"], ["created_at", "2024-03-28 09:20:34.137946"], ["updated_at", "2024-03-28 09:20:34.137946"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "availability_rules"[0m
+Processing by AvailabilityRulesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvailabilityRule Load (0.1ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Destroy (0.2ms)[0m  [1m[31mDELETE FROM "availability_rules" WHERE "availability_rules"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.4ms | Allocations: 363)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "availability_rules"[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Create (1.9ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "specific_dates"], ["rule_data", "{\"dates\":[\"2024-01-05\",\"2024-02-06\",\"2024-03-15\"]}"], ["created_at", "2024-03-28 09:20:34.151656"], ["updated_at", "2024-03-28 09:20:34.151656"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by AvailabilityRulesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvailabilityRule Load (0.1ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Destroy (0.1ms)[0m  [1m[31mDELETE FROM "availability_rules" WHERE "availability_rules"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.4ms | Allocations: 356)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by ToursController#index as HTML
+  [1m[36mTour Load (0.1ms)[0m  [1m[34mSELECT "tours".* FROM "tours"[0m
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 280)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Create (0.5ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "duration_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sample Tour"], ["description", "A sample tour description"], ["duration_hours", 3], ["duration_days", 1], ["created_at", "2024-03-28 09:20:34.171438"], ["updated_at", "2024-03-28 09:20:34.171438"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ToursController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTour Load (0.1ms)[0m  [1m[34mSELECT "tours".* FROM "tours" WHERE "tours"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 480)
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tours"[0m
+Processing by ToursController#create as HTML
+  Parameters: {"tour"=>{"description"=>"A sample tour description", "duration_days"=>"1", "duration_hours"=>"3", "name"=>"Sample Tour"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Create (0.4ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "duration_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sample Tour"], ["description", "A sample tour description"], ["duration_hours", 3], ["duration_days", 1], ["created_at", "2024-03-28 09:20:34.187423"], ["updated_at", "2024-03-28 09:20:34.187423"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 857)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tours"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by ToursController#create as HTML
+  Parameters: {"tour"=>{"description"=>"A sample tour description", "duration_days"=>"1", "duration_hours"=>"3", "name"=>"Sample Tour"}}
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Create (0.5ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "duration_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sample Tour"], ["description", "A sample tour description"], ["duration_hours", 3], ["duration_days", 1], ["created_at", "2024-03-28 09:20:34.194726"], ["updated_at", "2024-03-28 09:20:34.194726"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 6ms (Views: 3.0ms | ActiveRecord: 0.9ms | Allocations: 855)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by ToursController#create as HTML
+  Parameters: {"tour"=>{"description"=>"A sample tour description", "duration_days"=>"1", "duration_hours"=>"3", "name"=>""}}
+Completed 422 Unprocessable Entity in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 280)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Create (0.8ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "duration_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sample Tour"], ["description", "A sample tour description"], ["duration_hours", 3], ["duration_days", 1], ["created_at", "2024-03-28 09:20:34.210593"], ["updated_at", "2024-03-28 09:20:34.210593"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ToursController#update as HTML
+  Parameters: {"tour"=>{"name"=>"New Tour Name"}, "id"=>"1"}
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT "tours".* FROM "tours" WHERE "tours"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Update (0.1ms)[0m  [1m[33mUPDATE "tours" SET "name" = ?, "updated_at" = ? WHERE "tours"."id" = ?[0m  [["name", "New Tour Name"], ["updated_at", "2024-03-28 09:20:34.218050"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 912)
+  [1m[36mTour Load (0.1ms)[0m  [1m[34mSELECT "tours".* FROM "tours" WHERE "tours"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Create (0.5ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "duration_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sample Tour"], ["description", "A sample tour description"], ["duration_hours", 3], ["duration_days", 1], ["created_at", "2024-03-28 09:20:34.224909"], ["updated_at", "2024-03-28 09:20:34.224909"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ToursController#update as HTML
+  Parameters: {"tour"=>{"name"=>"New Tour Name"}, "id"=>"1"}
+  [1m[36mTour Load (0.5ms)[0m  [1m[34mSELECT "tours".* FROM "tours" WHERE "tours"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Update (0.1ms)[0m  [1m[33mUPDATE "tours" SET "name" = ?, "updated_at" = ? WHERE "tours"."id" = ?[0m  [["name", "New Tour Name"], ["updated_at", "2024-03-28 09:20:34.231853"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 876)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Create (0.4ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "duration_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sample Tour"], ["description", "A sample tour description"], ["duration_hours", 3], ["duration_days", 1], ["created_at", "2024-03-28 09:20:34.237441"], ["updated_at", "2024-03-28 09:20:34.237441"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ToursController#update as HTML
+  Parameters: {"tour"=>{"description"=>"A sample tour description", "duration_days"=>"1", "duration_hours"=>"3", "name"=>""}, "id"=>"1"}
+  [1m[36mTour Load (0.1ms)[0m  [1m[34mSELECT "tours".* FROM "tours" WHERE "tours"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 367)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Create (0.5ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "duration_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sample Tour"], ["description", "A sample tour description"], ["duration_hours", 3], ["duration_days", 1], ["created_at", "2024-03-28 09:20:34.249548"], ["updated_at", "2024-03-28 09:20:34.249548"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tours"[0m
+Processing by ToursController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTour Load (0.4ms)[0m  [1m[34mSELECT "tours".* FROM "tours" WHERE "tours"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Destroy (0.1ms)[0m  [1m[31mDELETE FROM "tours" WHERE "tours"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.7ms | Allocations: 363)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tours"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Create (0.5ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "duration_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sample Tour"], ["description", "A sample tour description"], ["duration_hours", 3], ["duration_days", 1], ["created_at", "2024-03-28 09:20:34.259523"], ["updated_at", "2024-03-28 09:20:34.259523"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ToursController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTour Load (2.6ms)[0m  [1m[34mSELECT "tours".* FROM "tours" WHERE "tours"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Destroy (0.2ms)[0m  [1m[31mDELETE FROM "tours" WHERE "tours"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 5ms (ActiveRecord: 3.0ms | Allocations: 356)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/create_tour_availability" for 127.0.0.1 at 2024-03-28 17:20:34 +0800
+Processing by ApiController#create_tour_availability as HTML
+  Parameters: {"tour"=>{"name"=>"Sample Tour", "description"=>"A sample tour description", "duration_hours"=>"3", "duration_days"=>"1"}, "availability"=>{"start_time"=>"2024-03-28 17:20:34 +0800"}, "availability_rule"=>{"rule_type"=>"specific_dates", "rule_data"=>{"dates"=>["2024-01-05", "2024-02-06", "2024-03-15"]}}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Create (0.5ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "specific_dates"], ["rule_data", "{\"dates\":[\"2024-01-05\",\"2024-02-06\",\"2024-03-15\"]}"], ["created_at", "2024-03-28 09:20:34.316928"], ["updated_at", "2024-03-28 09:20:34.316928"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTour Create (0.1ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "duration_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sample Tour"], ["description", "A sample tour description"], ["duration_hours", 3], ["duration_days", 1], ["created_at", "2024-03-28 09:20:34.318780"], ["updated_at", "2024-03-28 09:20:34.318780"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvailabilityRule Load (0.0ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAvailability Create (0.2ms)[0m  [1m[32mINSERT INTO "availabilities" ("tour_id", "availability_rule_id", "start_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tour_id", 1], ["availability_rule_id", 1], ["start_time", "2024-03-28 09:20:34"], ["created_at", "2024-03-28 09:20:34.321275"], ["updated_at", "2024-03-28 09:20:34.321275"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 16ms (Views: 0.7ms | ActiveRecord: 1.1ms | Allocations: 2924)
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/create_tour_availability" for 127.0.0.1 at 2024-03-28 17:20:34 +0800
+Processing by ApiController#create_tour_availability as HTML
+  Parameters: {"tour"=>{"name"=>nil}, "availability"=>{"start_time"=>nil}, "availability_rule"=>{"rule_type"=>nil}}
+Completed 422 Unprocessable Entity in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 318)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m

@@ -25,13 +25,7 @@ To install and run the Tour Availability Calendar application locally, follow th
 4. Set up the database by running `rails db:create` and `rails db:migrate`.
 5. Start the Rails server by running `rails server`.
 6. Access the application in your web browser at `http://localhost:3000`.
-
-## Usage
-
-1. Sign in to the application using your account credentials.
-2. Navigate to the dashboard to view and manage your tours.
-3. Set up tour availabilities by specifying the availability rules and associated start times.
-4. Save your changes and publish the updated availability schedule for customers to view and book tours.
+7. Testing by running `bundle exec rspec`.
 
 ## Sample Data
 
