@@ -1316,3 +1316,701 @@ Processing by AvailabilityRulesController#create as */*
 Completed 201 Created in 109ms (Views: 3.9ms | ActiveRecord: 16.5ms | Allocations: 9482)
 
 
+Started POST "/availability_rules" for ::1 at 2024-03-28 10:32:41 +0800
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AvailabilityRulesController#create as */*
+  Parameters: {"rule_type"=>"weekly", "rule_data"=>{"days"=>["Monday", "Wednesday", "Friday"]}, "availability_rule"=>{"rule_type"=>"weekly", "rule_data"=>{"days"=>["Monday", "Wednesday", "Friday"]}}}
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 2.3ms | Allocations: 5192)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'days' for AvailabilityRule.):
+  
+app/controllers/availability_rules_controller.rb:15:in `create'
+Started POST "/availability_rules" for ::1 at 2024-03-28 10:33:49 +0800
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AvailabilityRulesController#create as */*
+  Parameters: {"rule_type"=>"weekly", "rule_data"=>{"days"=>["Monday", "Wednesday", "Friday"]}, "availability_rule"=>{"rule_type"=>"weekly", "rule_data"=>{"days"=>["Monday", "Wednesday", "Friday"]}}}
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.0ms | Allocations: 5192)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'days' for AvailabilityRule.):
+  
+app/controllers/availability_rules_controller.rb:15:in `create'
+Started POST "/availability_rules" for ::1 at 2024-03-28 10:38:10 +0800
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AvailabilityRulesController#create as */*
+  Parameters: {"rule_type"=>"weekly", "rule_data"=>{"days"=>["Monday", "Wednesday", "Friday"]}, "availability_rule"=>{"rule_type"=>"weekly", "rule_data"=>{"days"=>["Monday", "Wednesday", "Friday"]}}}
+[31mUnpermitted parameter: :days[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/availability_rules_controller.rb:16:in `create'
+  [1m[36mAvailabilityRule Create (2.3ms)[0m  [1m[32mINSERT INTO "availability_rules" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2024-03-28 02:38:10.911604"], ["updated_at", "2024-03-28 02:38:10.911604"]]
+  ↳ app/controllers/availability_rules_controller.rb:16:in `create'
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/availability_rules_controller.rb:16:in `create'
+Completed 201 Created in 127ms (Views: 1.0ms | ActiveRecord: 7.0ms | Allocations: 9086)
+
+
+Started POST "/availability_rules" for ::1 at 2024-03-28 10:39:57 +0800
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AvailabilityRulesController#create as */*
+  Parameters: {"rule_type"=>"weekly", "rule_data"=>{"days"=>["Monday", "Wednesday", "Friday"]}, "availability_rule"=>{"rule_type"=>"weekly", "rule_data"=>{"days"=>["Monday", "Wednesday", "Friday"]}}}
+[31mUnpermitted parameter: :days[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/availability_rules_controller.rb:16:in `create'
+  [1m[36mAvailabilityRule Create (0.7ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "weekly"], ["rule_data", "{}"], ["created_at", "2024-03-28 02:39:57.504763"], ["updated_at", "2024-03-28 02:39:57.504763"]]
+  ↳ app/controllers/availability_rules_controller.rb:16:in `create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/availability_rules_controller.rb:16:in `create'
+Completed 201 Created in 104ms (Views: 0.7ms | ActiveRecord: 2.9ms | Allocations: 9356)
+
+
+Started POST "/availability_rules" for ::1 at 2024-03-28 10:41:47 +0800
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AvailabilityRulesController#create as */*
+  Parameters: {"rule_type"=>"weekly", "rule_data"=>{"days"=>["Monday", "Wednesday", "Friday"]}, "availability_rule"=>{"rule_type"=>"weekly", "rule_data"=>{"days"=>["Monday", "Wednesday", "Friday"]}}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/availability_rules_controller.rb:16:in `create'
+  [1m[36mAvailabilityRule Create (0.7ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "weekly"], ["rule_data", "{\"days\":[\"Monday\",\"Wednesday\",\"Friday\"]}"], ["created_at", "2024-03-28 02:41:47.832881"], ["updated_at", "2024-03-28 02:41:47.832881"]]
+  ↳ app/controllers/availability_rules_controller.rb:16:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/availability_rules_controller.rb:16:in `create'
+Completed 201 Created in 99ms (Views: 0.7ms | ActiveRecord: 3.3ms | Allocations: 9490)
+
+
+Started POST "/availability_rules" for ::1 at 2024-03-28 10:44:08 +0800
+Processing by AvailabilityRulesController#create as */*
+  Parameters: {"rule_type"=>"monthly", "rule_data"=>{"days_of_month"=>["Monday", "Wednesday", "Friday"], "week_number"=>[2, 4]}, "availability_rule"=>{"rule_type"=>"monthly", "rule_data"=>{"days_of_month"=>["Monday", "Wednesday", "Friday"], "week_number"=>[2, 4]}}}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/availability_rules_controller.rb:16:in `create'
+  [1m[36mAvailabilityRule Create (1.1ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "monthly"], ["rule_data", "{\"days_of_month\":[\"Monday\",\"Wednesday\",\"Friday\"],\"week_number\":[2,4]}"], ["created_at", "2024-03-28 02:44:08.592326"], ["updated_at", "2024-03-28 02:44:08.592326"]]
+  ↳ app/controllers/availability_rules_controller.rb:16:in `create'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/availability_rules_controller.rb:16:in `create'
+Completed 201 Created in 19ms (Views: 0.8ms | ActiveRecord: 3.3ms | Allocations: 3216)
+
+
+Started POST "/availability_rules" for ::1 at 2024-03-28 10:49:26 +0800
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AvailabilityRulesController#create as */*
+  Parameters: {"rule_type"=>"monthly", "rule_data"=>{"days_of_month"=>["Monday", "Wednesday", "Friday"], "week_numbers"=>[2, 4]}, "availability_rule"=>{"rule_type"=>"monthly", "rule_data"=>{"days_of_month"=>["Monday", "Wednesday", "Friday"], "week_numbers"=>[2, 4]}}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/availability_rules_controller.rb:16:in `create'
+  [1m[36mAvailabilityRule Create (0.7ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "monthly"], ["rule_data", "{\"days_of_month\":[\"Monday\",\"Wednesday\",\"Friday\"],\"week_numbers\":[2,4]}"], ["created_at", "2024-03-28 02:49:26.692220"], ["updated_at", "2024-03-28 02:49:26.692220"]]
+  ↳ app/controllers/availability_rules_controller.rb:16:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/availability_rules_controller.rb:16:in `create'
+Completed 201 Created in 90ms (Views: 5.0ms | ActiveRecord: 3.6ms | Allocations: 9355)
+
+
+Started GET "/availability_rules" for ::1 at 2024-03-28 10:50:08 +0800
+Processing by AvailabilityRulesController#index as */*
+  [1m[36mAvailabilityRule Load (1.3ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules"[0m
+  ↳ app/controllers/availability_rules_controller.rb:7:in `index'
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 1.3ms | Allocations: 2523)
+
+
+Started GET "/availabilities" for ::1 at 2024-03-28 10:50:41 +0800
+Processing by AvailabilitiesController#index as */*
+  [1m[36mAvailability Load (0.2ms)[0m  [1m[34mSELECT "availabilities".* FROM "availabilities"[0m
+  ↳ app/controllers/availabilities_controller.rb:7:in `index'
+Completed 200 OK in 18ms (Views: 2.3ms | ActiveRecord: 0.6ms | Allocations: 2808)
+
+
+Started POST "/availabilities" for ::1 at 2024-03-28 10:52:03 +0800
+Processing by AvailabilitiesController#create as */*
+  Parameters: {"tour_id"=>1, "availability_rule_id"=>1, "start_time"=>"2024-04-01T09:00:00Z", "availability"=>{"tour_id"=>1, "availability_rule_id"=>1, "start_time"=>"2024-04-01T09:00:00Z"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/availabilities_controller.rb:16:in `create'
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT "tours".* FROM "tours" WHERE "tours"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/availabilities_controller.rb:16:in `create'
+  [1m[36mAvailabilityRule Load (0.1ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/availabilities_controller.rb:16:in `create'
+  [1m[36mAvailability Create (0.6ms)[0m  [1m[32mINSERT INTO "availabilities" ("tour_id", "availability_rule_id", "start_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tour_id", 1], ["availability_rule_id", 1], ["start_time", "2024-04-01 09:00:00"], ["created_at", "2024-03-28 02:52:03.138040"], ["updated_at", "2024-03-28 02:52:03.138040"]]
+  ↳ app/controllers/availabilities_controller.rb:16:in `create'
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/availabilities_controller.rb:16:in `create'
+Completed 201 Created in 125ms (Views: 0.5ms | ActiveRecord: 7.8ms | Allocations: 26172)
+
+
+Started POST "/availabilities" for ::1 at 2024-03-28 10:52:12 +0800
+Processing by AvailabilitiesController#create as */*
+  Parameters: {"tour_id"=>10, "availability_rule_id"=>1, "start_time"=>"2024-04-01T09:00:00Z", "availability"=>{"tour_id"=>10, "availability_rule_id"=>1, "start_time"=>"2024-04-01T09:00:00Z"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/availabilities_controller.rb:16:in `create'
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT "tours".* FROM "tours" WHERE "tours"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/availabilities_controller.rb:16:in `create'
+  [1m[36mAvailabilityRule Load (0.1ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/availabilities_controller.rb:16:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/availabilities_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 36ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 7078)
+
+
+Started POST "/availabilities" for ::1 at 2024-03-28 10:52:22 +0800
+Processing by AvailabilitiesController#create as */*
+  Parameters: {"tour_id"=>1, "availability_rule_id"=>2, "start_time"=>"2024-04-01T09:00:00Z", "availability"=>{"tour_id"=>1, "availability_rule_id"=>2, "start_time"=>"2024-04-01T09:00:00Z"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/availabilities_controller.rb:16:in `create'
+  [1m[36mTour Load (0.2ms)[0m  [1m[34mSELECT "tours".* FROM "tours" WHERE "tours"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/availabilities_controller.rb:16:in `create'
+  [1m[36mAvailabilityRule Load (0.1ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/availabilities_controller.rb:16:in `create'
+  [1m[36mAvailability Create (0.9ms)[0m  [1m[32mINSERT INTO "availabilities" ("tour_id", "availability_rule_id", "start_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tour_id", 1], ["availability_rule_id", 2], ["start_time", "2024-04-01 09:00:00"], ["created_at", "2024-03-28 02:52:22.379274"], ["updated_at", "2024-03-28 02:52:22.379274"]]
+  ↳ app/controllers/availabilities_controller.rb:16:in `create'
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/availabilities_controller.rb:16:in `create'
+Completed 201 Created in 28ms (Views: 0.5ms | ActiveRecord: 4.9ms | Allocations: 5122)
+
+
+Started GET "/availabilities" for ::1 at 2024-03-28 10:52:26 +0800
+Processing by AvailabilitiesController#index as */*
+  Parameters: {"tour_id"=>1, "availability_rule_id"=>2, "start_time"=>"2024-04-01T09:00:00Z", "availability"=>{"tour_id"=>1, "availability_rule_id"=>2, "start_time"=>"2024-04-01T09:00:00Z"}}
+  [1m[36mAvailability Load (0.2ms)[0m  [1m[34mSELECT "availabilities".* FROM "availabilities"[0m
+  ↳ app/controllers/availabilities_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 1232)
+
+
+Started GET "/tours" for ::1 at 2024-03-28 11:02:41 +0800
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ToursController#index as HTML
+  [1m[36mTour Load (0.6ms)[0m  [1m[34mSELECT "tours".* FROM "tours"[0m
+  ↳ app/controllers/tours_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.6ms | Allocations: 1258)
+
+
+Started POST "/create_tour_availability" for ::1 at 2024-03-28 11:15:16 +0800
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/create_tour_availability"):
+  
+actionpack (6.0.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.6.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.6.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.6.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.6.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.6.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.6.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/host_authorization.rb:103:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.7) lib/rack/proxy.rb:87:in `call'
+railties (6.0.6.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/create_tour_availability" for ::1 at 2024-03-28 11:15:31 +0800
+Processing by ApiController#create_tour_availability as */*
+  Parameters: {"tour"=>{"name"=>"Historical Walking Tour", "description"=>"Learn about the city's rich history while exploring its streets.", "duration_hours"=>3, "duration_days"=>nil}, "availability"=>{"start_time"=>"2024-04-01T10:00:00"}, "availability_rule"=>{"rule_type"=>"specific_dates", "rule_data"=>{"dates"=>["2024-04-01", "2024-04-05", "2024-04-10"]}}, "api"=>{"tour"=>{"name"=>"Historical Walking Tour", "description"=>"Learn about the city's rich history while exploring its streets.", "duration_hours"=>3, "duration_days"=>nil}, "availability"=>{"start_time"=>"2024-04-01T10:00:00"}, "availability_rule"=>{"rule_type"=>"specific_dates", "rule_data"=>{"dates"=>["2024-04-01", "2024-04-05", "2024-04-10"]}}}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 598)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.0.6.1) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (6.0.6.1) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (6.0.6.1) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (6.0.6.1) lib/active_support/callbacks.rb:428:in `block in make_lambda'
+activesupport (6.0.6.1) lib/active_support/callbacks.rb:200:in `block (2 levels) in halting'
+actionpack (6.0.6.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.6.1) lib/active_support/callbacks.rb:201:in `block in halting'
+activesupport (6.0.6.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (6.0.6.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (6.0.6.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (6.0.6.1) lib/active_support/callbacks.rb:110:in `block in run_callbacks'
+activesupport (6.0.6.1) lib/active_support/callbacks.rb:139:in `run_callbacks'
+actionpack (6.0.6.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.6.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.6.1) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.6.1) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.6.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.6.1) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.6.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.6.1) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.6.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.6.1) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.6.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.6.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.6.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.6.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.6.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.6.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.6.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.6.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.6.1) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/cookies.rb:654:in `call'
+activerecord (6.0.6.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.6.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.6.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.6.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.6.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.6.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.6.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.6.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/host_authorization.rb:103:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.7) lib/rack/proxy.rb:87:in `call'
+railties (6.0.6.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/create_tour_availability" for ::1 at 2024-03-28 11:16:47 +0800
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApiController#create_tour_availability as */*
+  Parameters: {"tour"=>{"name"=>"Historical Walking Tour", "description"=>"Learn about the city's rich history while exploring its streets.", "duration_hours"=>3, "duration_days"=>nil}, "availability"=>{"start_time"=>"2024-04-01T10:00:00"}, "availability_rule"=>{"rule_type"=>"specific_dates", "rule_data"=>{"dates"=>["2024-04-01", "2024-04-05", "2024-04-10"]}}, "api"=>{"tour"=>{"name"=>"Historical Walking Tour", "description"=>"Learn about the city's rich history while exploring its streets.", "duration_hours"=>3, "duration_days"=>nil}, "availability"=>{"start_time"=>"2024-04-01T10:00:00"}, "availability_rule"=>{"rule_type"=>"specific_dates", "rule_data"=>{"dates"=>["2024-04-01", "2024-04-05", "2024-04-10"]}}}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:23:in `create_tour_availability'
+  [1m[36mTour Create (0.7ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Historical Walking Tour"], ["description", "Learn about the city's rich history while exploring its streets."], ["duration_hours", 3], ["created_at", "2024-03-28 03:16:47.985815"], ["updated_at", "2024-03-28 03:16:47.985815"]]
+  ↳ app/controllers/api_controller.rb:23:in `create_tour_availability'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:23:in `create_tour_availability'
+Completed 422 Unprocessable Entity in 134ms (Views: 0.4ms | ActiveRecord: 3.9ms | Allocations: 23702)
+
+
+Started POST "/api/create_tour_availability" for ::1 at 2024-03-28 11:22:02 +0800
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/Huy/DATA/MY_WORKING/ruby-on-rails-tour-availability-calendar/app/controllers/api_controller.rb:49: syntax error, unexpected end-of-input):
+  
+app/controllers/api_controller.rb:49: syntax error, unexpected end-of-input
+app/controllers/api_controller.rb:49: syntax error, unexpected end-of-input
+Started POST "/api/create_tour_availability" for ::1 at 2024-03-28 11:23:43 +0800
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApiController#create_tour_availability as */*
+  Parameters: {"tour"=>{"name"=>"Historical Walking Tour", "description"=>"Learn about the city's rich history while exploring its streets.", "duration_hours"=>3, "duration_days"=>nil}, "availability"=>{"start_time"=>"2024-04-01T10:00:00"}, "availability_rule"=>{"rule_type"=>"specific_dates", "rule_data"=>{"dates"=>["2024-04-01", "2024-04-05", "2024-04-10"]}}, "api"=>{"tour"=>{"name"=>"Historical Walking Tour", "description"=>"Learn about the city's rich history while exploring its streets.", "duration_hours"=>3, "duration_days"=>nil}, "availability"=>{"start_time"=>"2024-04-01T10:00:00"}, "availability_rule"=>{"rule_type"=>"specific_dates", "rule_data"=>{"dates"=>["2024-04-01", "2024-04-05", "2024-04-10"]}}}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:23:in `create_tour_availability'
+  [1m[36mAvailabilityRule Create (0.8ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "specific_dates"], ["rule_data", "{\"dates\":[\"2024-04-01\",\"2024-04-05\",\"2024-04-10\"]}"], ["created_at", "2024-03-28 03:23:43.628545"], ["updated_at", "2024-03-28 03:23:43.628545"]]
+  ↳ app/controllers/api_controller.rb:23:in `create_tour_availability'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:23:in `create_tour_availability'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:27:in `create_tour_availability'
+  [1m[36mTour Create (0.4ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Historical Walking Tour"], ["description", "Learn about the city's rich history while exploring its streets."], ["duration_hours", 3], ["created_at", "2024-03-28 03:23:43.744690"], ["updated_at", "2024-03-28 03:23:43.744690"]]
+  ↳ app/controllers/api_controller.rb:27:in `create_tour_availability'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:27:in `create_tour_availability'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:31:in `create_tour_availability'
+  [1m[36mAvailabilityRule Load (0.2ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:31:in `create_tour_availability'
+  [1m[36mAvailability Create (1.6ms)[0m  [1m[32mINSERT INTO "availabilities" ("tour_id", "availability_rule_id", "start_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tour_id", 3], ["availability_rule_id", 11], ["start_time", "2024-04-01 10:00:00"], ["created_at", "2024-03-28 03:23:43.810897"], ["updated_at", "2024-03-28 03:23:43.810897"]]
+  ↳ app/controllers/api_controller.rb:31:in `create_tour_availability'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:31:in `create_tour_availability'
+Completed 201 Created in 233ms (Views: 1.3ms | ActiveRecord: 14.7ms | Allocations: 39865)
+
+
+Started GET "/api/create_tour_availability" for ::1 at 2024-03-28 11:24:38 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/api/create_tour_availability"):
+  
+actionpack (6.0.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.6.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.6.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.6.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.6.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.6.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.6.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.6.1) lib/action_dispatch/middleware/host_authorization.rb:103:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.7) lib/rack/proxy.rb:87:in `call'
+railties (6.0.6.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/get_availability_tours" for ::1 at 2024-03-28 11:28:47 +0800
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApiController#get_availability_tours as */*
+  Parameters: {"tour"=>{"name"=>"Historical Walking Tour", "description"=>"Learn about the city's rich history while exploring its streets.", "duration_hours"=>3, "duration_days"=>nil}, "availability"=>{"start_time"=>"2024-04-01T10:00:00"}, "availability_rule"=>{"rule_type"=>"specific_dates", "rule_data"=>{"dates"=>["2024-04-01", "2024-04-05", "2024-04-10"]}}, "api"=>{"tour"=>{"name"=>"Historical Walking Tour", "description"=>"Learn about the city's rich history while exploring its streets.", "duration_hours"=>3, "duration_days"=>nil}, "availability"=>{"start_time"=>"2024-04-01T10:00:00"}, "availability_rule"=>{"rule_type"=>"specific_dates", "rule_data"=>{"dates"=>["2024-04-01", "2024-04-05", "2024-04-10"]}}}}
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT "tours".* FROM "tours"[0m
+  ↳ app/controllers/api_controller.rb:7:in `get_availability_tours'
+  [1m[36mAvailability Load (0.5ms)[0m  [1m[34mSELECT "availabilities".* FROM "availabilities" WHERE "availabilities"."tour_id" IN (?, ?, ?)[0m  [["tour_id", 1], ["tour_id", 2], ["tour_id", 3]]
+  ↳ app/controllers/api_controller.rb:7:in `get_availability_tours'
+  [1m[36mAvailabilityRule Load (1.2ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" IN (?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 11]]
+  ↳ app/controllers/api_controller.rb:7:in `get_availability_tours'
+Completed 200 OK in 176ms (Views: 1.2ms | ActiveRecord: 4.5ms | Allocations: 25555)
+
+
+Started POST "/api/create_tour_availability" for ::1 at 2024-03-28 12:53:43 +0800
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApiController#create_tour_availability as */*
+  Parameters: {"tour"=>{"name"=>"Historical Walking Tour", "description"=>"Learn about the city's rich history while exploring its streets.", "duration_hours"=>3, "duration_days"=>nil}, "availability"=>{"start_time"=>"2024-04-01T10:00:00"}, "availability_rule"=>{"rule_type"=>"specific_dates", "rule_data"=>{"dates"=>["2024-04-01", "2024-04-05", "2024-04-10"]}}, "api"=>{"tour"=>{"name"=>"Historical Walking Tour", "description"=>"Learn about the city's rich history while exploring its streets.", "duration_hours"=>3, "duration_days"=>nil}, "availability"=>{"start_time"=>"2024-04-01T10:00:00"}, "availability_rule"=>{"rule_type"=>"specific_dates", "rule_data"=>{"dates"=>["2024-04-01", "2024-04-05", "2024-04-10"]}}}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:32:in `create_tour_availability'
+  [1m[36mAvailabilityRule Create (1.1ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "specific_dates"], ["rule_data", "{\"dates\":[\"2024-04-01\",\"2024-04-05\",\"2024-04-10\"]}"], ["created_at", "2024-03-28 04:53:43.833775"], ["updated_at", "2024-03-28 04:53:43.833775"]]
+  ↳ app/controllers/api_controller.rb:32:in `create_tour_availability'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:32:in `create_tour_availability'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:36:in `create_tour_availability'
+  [1m[36mTour Create (0.5ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Historical Walking Tour"], ["description", "Learn about the city's rich history while exploring its streets."], ["duration_hours", 3], ["created_at", "2024-03-28 04:53:43.857808"], ["updated_at", "2024-03-28 04:53:43.857808"]]
+  ↳ app/controllers/api_controller.rb:36:in `create_tour_availability'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:36:in `create_tour_availability'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `create_tour_availability'
+  [1m[36mAvailabilityRule Load (0.4ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:40:in `create_tour_availability'
+  [1m[36mAvailability Create (0.9ms)[0m  [1m[32mINSERT INTO "availabilities" ("tour_id", "availability_rule_id", "start_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tour_id", 4], ["availability_rule_id", 12], ["start_time", "2024-04-01 10:00:00"], ["created_at", "2024-03-28 04:53:43.915271"], ["updated_at", "2024-03-28 04:53:43.915271"]]
+  ↳ app/controllers/api_controller.rb:40:in `create_tour_availability'
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `create_tour_availability'
+Completed 201 Created in 181ms (Views: 2.0ms | ActiveRecord: 19.0ms | Allocations: 31595)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "availabilities"[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "availabilities" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "tour_id" integer NOT NULL, "availability_rule_id" integer NOT NULL, "start_time" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX "index_availabilities_on_availability_rule_id" ON "availabilities" ("availability_rule_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX "index_availabilities_on_tour_id" ON "availabilities" ("tour_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "availability_rules"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "availability_rules" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "rule_type" varchar, "rule_data" json, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "tours"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "tours" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "duration_hours" integer, "duration_days" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aavailabilities" ("id" integer NOT NULL PRIMARY KEY, "tour_id" integer NOT NULL, "availability_rule_id" integer NOT NULL, "start_time" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aavailabilities_on_tour_id" ON "aavailabilities" ("tour_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aavailabilities_on_availability_rule_id" ON "aavailabilities" ("availability_rule_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aavailabilities" ("id","tour_id","availability_rule_id","start_time","created_at","updated_at")
+                     SELECT "id","tour_id","availability_rule_id","start_time","created_at","updated_at" FROM "availabilities"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE "availabilities"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "availabilities" ("id" integer NOT NULL PRIMARY KEY, "tour_id" integer NOT NULL, "availability_rule_id" integer NOT NULL, "start_time" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5756610d3f"
+FOREIGN KEY ("availability_rule_id")
+  REFERENCES "availability_rules" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_availabilities_on_availability_rule_id" ON "availabilities" ("availability_rule_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_availabilities_on_tour_id" ON "availabilities" ("tour_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "availabilities" ("id","tour_id","availability_rule_id","start_time","created_at","updated_at")
+                     SELECT "id","tour_id","availability_rule_id","start_time","created_at","updated_at" FROM "aavailabilities"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "aavailabilities"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aavailabilities" ("id" integer NOT NULL PRIMARY KEY, "tour_id" integer NOT NULL, "availability_rule_id" integer NOT NULL, "start_time" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aavailabilities_on_tour_id" ON "aavailabilities" ("tour_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aavailabilities_on_availability_rule_id" ON "aavailabilities" ("availability_rule_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aavailabilities" ("id","tour_id","availability_rule_id","start_time","created_at","updated_at")
+                     SELECT "id","tour_id","availability_rule_id","start_time","created_at","updated_at" FROM "availabilities"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "availabilities"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "availabilities" ("id" integer NOT NULL PRIMARY KEY, "tour_id" integer NOT NULL, "availability_rule_id" integer NOT NULL, "start_time" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5756610d3f"
+FOREIGN KEY ("availability_rule_id")
+  REFERENCES "availability_rules" ("id")
+, CONSTRAINT "fk_rails_9840c1e67d"
+FOREIGN KEY ("tour_id")
+  REFERENCES "tours" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_availabilities_on_availability_rule_id" ON "availabilities" ("availability_rule_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_availabilities_on_tour_id" ON "availabilities" ("tour_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "availabilities" ("id","tour_id","availability_rule_id","start_time","created_at","updated_at")
+                     SELECT "id","tour_id","availability_rule_id","start_time","created_at","updated_at" FROM "aavailabilities"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "aavailabilities"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20240327124602)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20240327115417),
+(20240327115519);
+
+[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-03-28 07:57:39.234638"], ["updated_at", "2024-03-28 07:57:39.234638"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2024-03-28 07:57:39.245090"], ["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "58f004826dcd5eddbbc07038e4ca7c35d3613c96"], ["created_at", "2024-03-28 07:57:39.254476"], ["updated_at", "2024-03-28 07:57:39.254476"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "availabilities"[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "availabilities" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "tour_id" integer NOT NULL, "availability_rule_id" integer NOT NULL, "start_time" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX "index_availabilities_on_availability_rule_id" ON "availabilities" ("availability_rule_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX "index_availabilities_on_tour_id" ON "availabilities" ("tour_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "availability_rules"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "availability_rules" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "rule_type" varchar, "rule_data" json, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "tours"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "tours" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "duration_hours" integer, "duration_days" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aavailabilities" ("id" integer NOT NULL PRIMARY KEY, "tour_id" integer NOT NULL, "availability_rule_id" integer NOT NULL, "start_time" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aavailabilities_on_tour_id" ON "aavailabilities" ("tour_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aavailabilities_on_availability_rule_id" ON "aavailabilities" ("availability_rule_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aavailabilities" ("id","tour_id","availability_rule_id","start_time","created_at","updated_at")
+                     SELECT "id","tour_id","availability_rule_id","start_time","created_at","updated_at" FROM "availabilities"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "availabilities"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "availabilities" ("id" integer NOT NULL PRIMARY KEY, "tour_id" integer NOT NULL, "availability_rule_id" integer NOT NULL, "start_time" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5756610d3f"
+FOREIGN KEY ("availability_rule_id")
+  REFERENCES "availability_rules" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_availabilities_on_availability_rule_id" ON "availabilities" ("availability_rule_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_availabilities_on_tour_id" ON "availabilities" ("tour_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "availabilities" ("id","tour_id","availability_rule_id","start_time","created_at","updated_at")
+                     SELECT "id","tour_id","availability_rule_id","start_time","created_at","updated_at" FROM "aavailabilities"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "aavailabilities"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aavailabilities" ("id" integer NOT NULL PRIMARY KEY, "tour_id" integer NOT NULL, "availability_rule_id" integer NOT NULL, "start_time" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aavailabilities_on_tour_id" ON "aavailabilities" ("tour_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aavailabilities_on_availability_rule_id" ON "aavailabilities" ("availability_rule_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aavailabilities" ("id","tour_id","availability_rule_id","start_time","created_at","updated_at")
+                     SELECT "id","tour_id","availability_rule_id","start_time","created_at","updated_at" FROM "availabilities"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "availabilities"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "availabilities" ("id" integer NOT NULL PRIMARY KEY, "tour_id" integer NOT NULL, "availability_rule_id" integer NOT NULL, "start_time" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5756610d3f"
+FOREIGN KEY ("availability_rule_id")
+  REFERENCES "availability_rules" ("id")
+, CONSTRAINT "fk_rails_9840c1e67d"
+FOREIGN KEY ("tour_id")
+  REFERENCES "tours" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_availabilities_on_availability_rule_id" ON "availabilities" ("availability_rule_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_availabilities_on_tour_id" ON "availabilities" ("tour_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "availabilities" ("id","tour_id","availability_rule_id","start_time","created_at","updated_at")
+                     SELECT "id","tour_id","availability_rule_id","start_time","created_at","updated_at" FROM "aavailabilities"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aavailabilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20240327124602)[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20240327115417),
+(20240327115519);
+
+[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-03-28 08:00:28.675412"], ["updated_at", "2024-03-28 08:00:28.675412"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2024-03-28 08:00:28.685340"], ["key", "environment"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "58f004826dcd5eddbbc07038e4ca7c35d3613c96"], ["created_at", "2024-03-28 08:00:28.693133"], ["updated_at", "2024-03-28 08:00:28.693133"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/api/create_tour_availability" for ::1 at 2024-03-28 16:24:56 +0800
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApiController#create_tour_availability as */*
+  Parameters: {"tour"=>{"name"=>"Historical Walking Tour", "description"=>"Learn about the city's rich history while exploring its streets.", "duration_hours"=>3, "duration_days"=>nil}, "availability"=>{"start_time"=>"2024-04-01T10:00:00"}, "availability_rule"=>{"rule_type"=>"specific_dates", "rule_data"=>{"dates"=>["2024-04-01", "2024-04-05", "2024-04-10"]}}, "api"=>{"tour"=>{"name"=>"Historical Walking Tour", "description"=>"Learn about the city's rich history while exploring its streets.", "duration_hours"=>3, "duration_days"=>nil}, "availability"=>{"start_time"=>"2024-04-01T10:00:00"}, "availability_rule"=>{"rule_type"=>"specific_dates", "rule_data"=>{"dates"=>["2024-04-01", "2024-04-05", "2024-04-10"]}}}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:42:in `create_tour_availability'
+  [1m[36mAvailabilityRule Create (1.0ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "specific_dates"], ["rule_data", "{\"dates\":[\"2024-04-01\",\"2024-04-05\",\"2024-04-10\"]}"], ["created_at", "2024-03-28 08:24:56.479585"], ["updated_at", "2024-03-28 08:24:56.479585"]]
+  ↳ app/controllers/api_controller.rb:42:in `create_tour_availability'
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:42:in `create_tour_availability'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:46:in `create_tour_availability'
+  [1m[36mTour Create (0.7ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Historical Walking Tour"], ["description", "Learn about the city's rich history while exploring its streets."], ["duration_hours", 3], ["created_at", "2024-03-28 08:24:56.538712"], ["updated_at", "2024-03-28 08:24:56.538712"]]
+  ↳ app/controllers/api_controller.rb:46:in `create_tour_availability'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:46:in `create_tour_availability'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:50:in `create_tour_availability'
+  [1m[36mAvailabilityRule Load (0.3ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:50:in `create_tour_availability'
+  [1m[36mAvailability Create (1.0ms)[0m  [1m[32mINSERT INTO "availabilities" ("tour_id", "availability_rule_id", "start_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tour_id", 5], ["availability_rule_id", 13], ["start_time", "2024-04-01 10:00:00"], ["created_at", "2024-03-28 08:24:56.630844"], ["updated_at", "2024-03-28 08:24:56.630844"]]
+  ↳ app/controllers/api_controller.rb:50:in `create_tour_availability'
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:50:in `create_tour_availability'
+Completed 201 Created in 216ms (Views: 1.8ms | ActiveRecord: 17.9ms | Allocations: 41175)
+
+
+Started POST "/api/create_tour_availability" for ::1 at 2024-03-28 16:54:31 +0800
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApiController#create_tour_availability as */*
+  Parameters: {"tour"=>{"name"=>"Historical Walking Tour", "description"=>"Learn about the city's rich history while exploring its streets.", "duration_hours"=>3, "duration_days"=>nil}, "availability"=>{"start_time"=>"2024-04-01T10:00:00"}, "availability_rule"=>{"rule_type"=>"specific_dates", "rule_data"=>{"dates"=>["2024-04-01", "2024-04-05", "2024-04-10"]}}, "api"=>{"tour"=>{"name"=>"Historical Walking Tour", "description"=>"Learn about the city's rich history while exploring its streets.", "duration_hours"=>3, "duration_days"=>nil}, "availability"=>{"start_time"=>"2024-04-01T10:00:00"}, "availability_rule"=>{"rule_type"=>"specific_dates", "rule_data"=>{"dates"=>["2024-04-01", "2024-04-05", "2024-04-10"]}}}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:42:in `create_tour_availability'
+  [1m[36mAvailabilityRule Create (0.7ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "specific_dates"], ["rule_data", "{\"dates\":[\"2024-04-01\",\"2024-04-05\",\"2024-04-10\"]}"], ["created_at", "2024-03-28 08:54:32.110507"], ["updated_at", "2024-03-28 08:54:32.110507"]]
+  ↳ app/controllers/api_controller.rb:42:in `create_tour_availability'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:42:in `create_tour_availability'
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:46:in `create_tour_availability'
+  [1m[36mTour Create (0.6ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Historical Walking Tour"], ["description", "Learn about the city's rich history while exploring its streets."], ["duration_hours", 3], ["created_at", "2024-03-28 08:54:32.164779"], ["updated_at", "2024-03-28 08:54:32.164779"]]
+  ↳ app/controllers/api_controller.rb:46:in `create_tour_availability'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:46:in `create_tour_availability'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:50:in `create_tour_availability'
+  [1m[36mAvailabilityRule Load (0.4ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:50:in `create_tour_availability'
+  [1m[36mAvailability Create (3.4ms)[0m  [1m[32mINSERT INTO "availabilities" ("tour_id", "availability_rule_id", "start_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tour_id", 6], ["availability_rule_id", 14], ["start_time", "2024-04-01 10:00:00"], ["created_at", "2024-03-28 08:54:32.319405"], ["updated_at", "2024-03-28 08:54:32.319405"]]
+  ↳ app/controllers/api_controller.rb:50:in `create_tour_availability'
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:50:in `create_tour_availability'
+Completed 201 Created in 277ms (Views: 1.4ms | ActiveRecord: 25.6ms | Allocations: 37899)
+
+
+Started POST "/availability_rules" for ::1 at 2024-03-28 16:54:41 +0800
+Processing by AvailabilityRulesController#create as */*
+  Parameters: {"rule_type"=>"monthly", "rule_data"=>{"days_of_month"=>["Monday", "Wednesday", "Friday"], "week_numbers"=>[2, 4]}, "availability_rule"=>{"rule_type"=>"monthly", "rule_data"=>{"days_of_month"=>["Monday", "Wednesday", "Friday"], "week_numbers"=>[2, 4]}}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/availability_rules_controller.rb:22:in `create'
+  [1m[36mAvailabilityRule Create (0.8ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "monthly"], ["rule_data", "{\"days_of_month\":[\"Monday\",\"Wednesday\",\"Friday\"],\"week_numbers\":[2,4]}"], ["created_at", "2024-03-28 08:54:41.367883"], ["updated_at", "2024-03-28 08:54:41.367883"]]
+  ↳ app/controllers/availability_rules_controller.rb:22:in `create'
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/availability_rules_controller.rb:22:in `create'
+Completed 201 Created in 18ms (Views: 0.7ms | ActiveRecord: 3.2ms | Allocations: 3860)
+
+
+Started GET "/api/get_availability_tours" for ::1 at 2024-03-28 17:05:33 +0800
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ApiController#get_availability_tours as */*
+  [1m[36mTour Load (0.3ms)[0m  [1m[34mSELECT "tours".* FROM "tours"[0m
+  ↳ app/controllers/api_controller.rb:7:in `get_availability_tours'
+  [1m[36mAvailability Load (0.9ms)[0m  [1m[34mSELECT "availabilities".* FROM "availabilities" WHERE "availabilities"."tour_id" IN (?, ?, ?, ?, ?, ?)[0m  [["tour_id", 1], ["tour_id", 2], ["tour_id", 3], ["tour_id", 4], ["tour_id", 5], ["tour_id", 6]]
+  ↳ app/controllers/api_controller.rb:7:in `get_availability_tours'
+  [1m[36mAvailabilityRule Load (0.3ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" IN (?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 11], ["id", 12], ["id", 13], ["id", 14]]
+  ↳ app/controllers/api_controller.rb:7:in `get_availability_tours'
+Completed 200 OK in 53ms (Views: 1.2ms | ActiveRecord: 1.5ms | Allocations: 13797)
+
+
+Started POST "/api/create_tour_availability" for ::1 at 2024-03-28 17:15:41 +0800
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ApiController#create_tour_availability as */*
+  Parameters: {"tour"=>{"name"=>"Historical Walking Tour", "description"=>"Learn about the city's rich history while exploring its streets.", "duration_hours"=>3, "duration_days"=>nil}, "availability"=>{"start_time"=>"2024-04-01T10:00:00"}, "availability_rule"=>{"rule_type"=>"specific_dates", "rule_data"=>{"dates"=>["2024-04-01", "2024-04-05", "2024-04-10"]}}, "api"=>{"tour"=>{"name"=>"Historical Walking Tour", "description"=>"Learn about the city's rich history while exploring its streets.", "duration_hours"=>3, "duration_days"=>nil}, "availability"=>{"start_time"=>"2024-04-01T10:00:00"}, "availability_rule"=>{"rule_type"=>"specific_dates", "rule_data"=>{"dates"=>["2024-04-01", "2024-04-05", "2024-04-10"]}}}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:42:in `create_tour_availability'
+  [1m[36mAvailabilityRule Create (0.7ms)[0m  [1m[32mINSERT INTO "availability_rules" ("rule_type", "rule_data", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rule_type", "specific_dates"], ["rule_data", "{\"dates\":[\"2024-04-01\",\"2024-04-05\",\"2024-04-10\"]}"], ["created_at", "2024-03-28 09:15:41.276184"], ["updated_at", "2024-03-28 09:15:41.276184"]]
+  ↳ app/controllers/api_controller.rb:42:in `create_tour_availability'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:42:in `create_tour_availability'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:46:in `create_tour_availability'
+  [1m[36mTour Create (0.5ms)[0m  [1m[32mINSERT INTO "tours" ("name", "description", "duration_hours", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Historical Walking Tour"], ["description", "Learn about the city's rich history while exploring its streets."], ["duration_hours", 3], ["created_at", "2024-03-28 09:15:41.285018"], ["updated_at", "2024-03-28 09:15:41.285018"]]
+  ↳ app/controllers/api_controller.rb:46:in `create_tour_availability'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:46:in `create_tour_availability'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:50:in `create_tour_availability'
+  [1m[36mAvailabilityRule Load (0.3ms)[0m  [1m[34mSELECT "availability_rules".* FROM "availability_rules" WHERE "availability_rules"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:50:in `create_tour_availability'
+  [1m[36mAvailability Create (0.7ms)[0m  [1m[32mINSERT INTO "availabilities" ("tour_id", "availability_rule_id", "start_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tour_id", 7], ["availability_rule_id", 16], ["start_time", "2024-04-01 10:00:00"], ["created_at", "2024-03-28 09:15:41.296404"], ["updated_at", "2024-03-28 09:15:41.296404"]]
+  ↳ app/controllers/api_controller.rb:50:in `create_tour_availability'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:50:in `create_tour_availability'
+Completed 201 Created in 31ms (Views: 0.7ms | ActiveRecord: 5.9ms | Allocations: 10303)
+
+

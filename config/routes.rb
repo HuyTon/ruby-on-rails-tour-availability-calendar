@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   resources :tours
   resources :availabilities
   resources :availability_rules
+
+  get '/api/get_availability_tours', to: 'api#get_availability_tours'
+  post '/api/create_tour_availability', to: 'api#create_tour_availability'
 end

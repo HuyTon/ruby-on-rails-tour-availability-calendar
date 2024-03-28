@@ -12,6 +12,12 @@ class ToursController < ApplicationController
   end
 
   def create
+    if tour_params.blank? ||       
+       tour_params[:name].blank?
+       render json: { error: "Failed to create tour" }, status: :unprocessable_entity
+       return
+    end
+
     @tour = Tour.new(tour_params)
     if @tour.save
       render json: @tour, status: :created
@@ -21,6 +27,12 @@ class ToursController < ApplicationController
   end
 
   def update
+    if tour_params.blank? ||       
+      tour_params[:name].blank?
+      render json: { error: "Failed to update tour" }, status: :unprocessable_entity
+      return
+    end
+
     if @tour.update(tour_params)
       render json: @tour
     else

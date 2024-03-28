@@ -12,6 +12,12 @@ class AvailabilityRulesController < ApplicationController
     end
   
     def create
+      if availability_rule_params.blank? ||
+         availability_rule_params[:rule_type].blank?
+         render json: { error: "Failed to create availability rule" }, status: :unprocessable_entity
+         return
+      end
+
       @availability_rule = AvailabilityRule.new(availability_rule_params)
       if @availability_rule.save
         render json: @availability_rule, status: :created
@@ -21,6 +27,12 @@ class AvailabilityRulesController < ApplicationController
     end
   
     def update
+      if availability_rule_params.blank? ||
+        availability_rule_params[:rule_type].blank?
+        render json: { error: "Failed to update availability rule" }, status: :unprocessable_entity
+        return
+      end
+
       if @availability_rule.update(availability_rule_params)
         render json: @availability_rule
       else
@@ -47,12 +59,12 @@ class AvailabilityRulesController < ApplicationController
       when "specific_dates"
         permitted_params[:rule_data].permit(dates: [])
       when "weekly"
-        permitted_params[:rule_data].permit(days: [], week_number: [])
+        params.require(:availability_rule).permit(:rule_type, rule_data: { days: [] })
       when "monthly"
-        permitted_params[:rule_data].permit(day_of_month: [], week_number: [])
+        params.require(:availability_rule).permit(:rule_type, rule_data: { days_of_month: [], week_numbers: [] })
       # Add more cases for other rule types as needed
       else
-        permitted_params[:rule_data].permit(:custom_criteria)
+        params.require(:availability_rule).permit(:rule_type, rule_data: [:custom_criteria])
       end
     end
   end

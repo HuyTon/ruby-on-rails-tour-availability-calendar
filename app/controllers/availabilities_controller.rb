@@ -12,6 +12,12 @@ class AvailabilitiesController < ApplicationController
     end
   
     def create
+      if availability_params.blank? || 
+         availability_params[:start_time].blank?
+         render json: { error: "Failed to create availability" }, status: :unprocessable_entity
+         return
+      end
+
       @availability = Availability.new(availability_params)
       if @availability.save
         render json: @availability, status: :created
@@ -21,6 +27,12 @@ class AvailabilitiesController < ApplicationController
     end
   
     def update
+      if availability_params.blank? || 
+        availability_params[:start_time].blank?
+        render json: { error: "Failed to update availability" }, status: :unprocessable_entity
+        return
+      end
+
       if @availability.update(availability_params)
         render json: @availability
       else
