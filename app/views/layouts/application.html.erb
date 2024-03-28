@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TourAvailabilityCalendar</title>    
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= form_tag some_path do %>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <!-- Other form fields here -->
+      <%= submit_tag "Submit" %>
+    <% end %>
+  
+    <%= yield %>
+  </body>
+</html>
